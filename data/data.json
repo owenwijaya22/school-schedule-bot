@@ -1,0 +1,65 @@
+{
+    "CS1302": [
+        {
+            "day": "Monday",
+            "time": { "time_starts": "12", "time_ends": "14.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/99053961777?pwd=cWMvVVpxbzF4MXEwNytGLy9FMGRKdz09&uname=Owen+VALENTINUS"
+        },
+        {
+            "day": "Monday",
+            "time": { "time_starts": "16", "time_ends": "16.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/99053961777?pwd=cWMvVVpxbzF4MXEwNytGLy9FMGRKdz09&uname=Owen+VALENTINUS"
+        }
+    ],
+    "MA1200": [
+        {
+            "day": "Tuesday",
+            "time": { "time_starts": "10", "time_ends": "11.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/96115175728?pwd=VGR5ekRzMWRBdHFzaElpcUlzalZidz09&uname=Owen+VALENTINUS"
+        },
+        {
+            "day": "Thursday",
+            "time": { "time_starts": "15", "time_ends": "16.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/99899247499?pwd=TVByckx2U1U2S0YvV0xpbFVqYWJvZz09&uname=Owen+VALENTINUS"
+        }
+    ],
+    "PHY1201": [
+        {
+            "day": "Tuesday",
+            "time": { "time_starts": "16", "time_ends": "18.50" },
+            "type": "lab",
+            "zoom_link": "gk ad"
+        },
+        {
+            "day": "Wednesday",
+            "time": { "time_starts": "16", "time_ends": "18.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/93998400956?uname=Owen+VALENTINUS"
+        },
+
+        {
+            "day": "Thursday",
+            "time": { "time_starts": "11", "time_ends": "11.50" },
+            "type": "tutorial",
+            "zoom_link": "https://cityu.zoom.us/j/92199559650?uname=Owen+VALENTINUS"
+        }
+    ],
+    "JC2066": [
+        {
+            "day": "Wednesday",
+            "time": { "time_starts": "09", "time_ends": "09.50" },
+            "type": "lecture",
+            "zoom_link": "https://cityu.zoom.us/j/94173210865"
+        },
+        {
+            "day": "Friday",
+            "time": { "time_starts": "09", "time_ends": "11.50" },
+            "type": "tutorial",
+            "zoom_link": "https://cityu.zoom.us/j/97879486749"
+        }
+    ]
+}
