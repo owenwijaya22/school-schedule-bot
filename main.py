@@ -32,7 +32,7 @@ for course, course_infos in courses.items():
                 #construct message
                 message += f"lu ad {course} {lesson_type} jam {course_hour_starts}\n selesai jam {course_hour_ends}\n nih zoom link {zoom_link} (udh auto buka juga sih di laptop)\n"
                 #auto buka zoom tab
-                webbrowser.open_new_tab(zoom_link)
+                webbrowser.open(zoom_link, new=0)
                 # send gmail
                 with yagmail.SMTP(sender, password) as yag:
                     yag.send(to=recipient, subject="schedule", contents=message)
