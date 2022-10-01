@@ -7,6 +7,8 @@ import webbrowser
 today = datetime.datetime.now()
 hour = float(today.time().hour)
 day = today.strftime("%A")
+# hour = 14
+# day = "Friday"
 with open("./data/data.json", "r+") as file:
     courses = json.load(file)
 
@@ -26,17 +28,18 @@ for course, course_infos in courses.items():
             if hour == float(course_hour_starts) - 1:
                 # get class details to be send from gmail
                 course_hour_ends = course_info["time"]["time_ends"]
-                lesson_type = course_info["type"]
+                course_type = course_info["type"]
                 zoom_link = course_info["zoom_link"]
                 # construct message
                 message = f'''
-                <p>Course: {course} {lesson_type}</p>
+                <p>Course: {course} {course_type}</p>
                 <p>Starts at: {course_hour_starts}.00</p>
                 <p>Ends at: {course_hour_ends}</p>
                 <p><a href="{zoom_link}">zoom link</a></p>
                 '''
                 # auto buka zoom tab
-                webbrowser.open(zoom_link, new=0)
+                if zoom_link:
+                    webbrowser.open(zoom_link, new=0)
                 # send gmail
                 with yagmail.SMTP(sender, password) as yag:
                     yag.send(to=recipient, subject="schedule", contents=message)
