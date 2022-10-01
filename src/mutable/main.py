@@ -1,6 +1,7 @@
-from class_attempt import Courses
-from course_adder import get_courses
+from mutable_class import Courses
+from change_course import get_courses
 import json
+
 
 def get_config():
     with open("./data/config.json", "r") as file:
@@ -10,6 +11,7 @@ def get_config():
         password = configs["password"]
     return sender, recipient, password
 
+
 def main(courses, sender, recipient, password):
     sender, recipient, password = get_config()
     courses = get_courses()
@@ -18,6 +20,7 @@ def main(courses, sender, recipient, password):
     Bot.get_today_info()
     Bot.get_courses_info()
     Bot.send_gmail(sender, recipient, password)
+
 
 if __name__ == "__main__":
     main()
