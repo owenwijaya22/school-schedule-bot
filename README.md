@@ -1,4 +1,4 @@
-# School_schedule_bot
+# School Schedule Bot
 A "helper bot" to remind me of my university schedules
 
 The bot will send  gmail embedded with the course infos such as the course name, building name, and the time it starts and ends.
