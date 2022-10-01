@@ -88,9 +88,8 @@ T02 = Courses(
     "09:50",
     "YEUNG LT-2",
     "https://cityu.zoom.us/j/97748439786?uname=Owen+VALENTINUS"
-
-
 )
+
 TE1 = Courses(
     "MA1200",
     "tutorial",
@@ -99,7 +98,6 @@ TE1 = Courses(
     "13:50",
     "YEUNG B5-210"
 )
-
 
 C02 = Courses(
     "PHY1201",
