@@ -1,5 +1,4 @@
 # School Schedule Bot
-A "helper bot" to remind me of my university schedules
 
 The bot will send  gmail embedded with the course infos such as the course name, building name, and the time it starts and ends.
 It will also open the zoom app if there's any zoom class available.
