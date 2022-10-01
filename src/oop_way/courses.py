@@ -16,24 +16,28 @@ class Courses:
         self.building = building
         self.zoom_link = zoom_link
     
-    def send_email(self, sender, password, recipient):
-        today = datetime.datetime.now()
-        hour = 14
-        self.day = "Friday"
-        # hour = float(today.time().hour)
-        # day = today.strftime("%A")
-        if today == self.day:
+    def check_schedule(self):
+        today_info = datetime.datetime.now()
+        hour = float(today_info.time().hour)
+        day = today_info.strftime("%A")
+        if day == self.day:
             if hour == int(self.time_starts[:2])-1:
-                message =  f"""
-                    <p>Course: {self.course_name} {self.course_type}</p>
-                    <p>Starts at: {self.time_starts}.00</p>
-                    <p>Ends at: {self.time_ends}</p>
-                    <p><a href="{self.zoom_link}">zoom link</a></p>        
-                    """
-                with yagmail.SMTP(sender, password) as yag:
-                    yag.send(to=recipient, subject="schedule", contents=message)
-                  
+                return True
 
+
+    def send_email(self, sender, password, recipient):
+        message =  f"""
+            <p>Course: {self.course_name} {self.course_type}</p>
+            <p>Starts at: {self.time_starts}.00</p>
+            <p>Ends at: {self.time_ends}</p>
+            <p><a href="{self.zoom_link}">zoom link</a></p>        
+            """
+        with yagmail.SMTP(sender, password) as yag:
+            yag.send(to=recipient, subject="schedule", contents=message)
+                  
+    def open_zoom(self):
+        if self.zoom_link:
+            webbrowser.open(self.zoom_link)
     
     
 
