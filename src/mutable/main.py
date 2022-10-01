@@ -1,25 +1,14 @@
 from mutable_class import Courses
 from change_course import get_courses
-import json
 
-
-def get_config():
-    with open("./data/config.json", "r") as file:
-        configs = json.load(file)
-        sender = configs["sender"]
-        recipient = configs["recipient"]
-        password = configs["password"]
-    return sender, recipient, password
-
-
-def main(courses, sender, recipient, password):
-    sender, recipient, password = get_config()
+def main():
     courses = get_courses()
 
     Bot = Courses(courses)
+    Bot.get_config()
     Bot.get_today_info()
     Bot.get_courses_info()
-    Bot.send_gmail(sender, recipient, password)
+    Bot.send_gmail()
 
 
 if __name__ == "__main__":

@@ -25,8 +25,3 @@ def change_course(courses):
         {new_course: [new_day, new_time, new_type, new_building, new_zoom_link]}
     )
     return courses
-
-
-courses = get_courses()
-courses_now = change_course(courses)
-print(courses_now)

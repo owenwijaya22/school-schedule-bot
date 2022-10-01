@@ -2,9 +2,17 @@ import datetime
 import yagmail
 import json
 
+
 class Courses:
     def __init__(self, courses):
         self.courses = courses
+
+    def get_config(self):
+        with open("./data/config.json", "r") as file:
+            configs = json.load(file)
+            self.sender = configs["sender"]
+            self.recipient = configs["recipient"]
+            self.password = configs["password"]
 
     def get_today_info(self):
         # get today's info
@@ -31,7 +39,7 @@ class Courses:
                         <p>Ends at: {course_hour_ends}</p>
                         <p><a href="{zoom_link}">zoom link</a></p>
                         """
-    def send_gmail(self, sender, recipient, password):
+
+    def send_gmail(self):
         with yagmail.SMTP(self.sender, self.password) as yag:
             yag.send(to=self.recipient, subject="schedule", contents=self.message)
-
