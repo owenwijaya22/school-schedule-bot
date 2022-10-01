@@ -7,8 +7,7 @@ import webbrowser
 today = datetime.datetime.now()
 hour = float(today.time().hour)
 day = today.strftime("%A")
-# hour = 14
-# day = "Friday"
+
 with open("./data/data.json", "r+") as file:
     courses = json.load(file)
 
