@@ -12,6 +12,7 @@ with open("./data/config.json", "r") as file:
 
 for course_name, course_infos in courses.items():
     for course_info in course_infos:
-        course = Course(course_info)
+        course = Course(course_info, course_name)
         if course.is_near():
             course.send_email(sender, recipient, password)
+            course.open_zoom()
