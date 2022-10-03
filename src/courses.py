@@ -1,8 +1,11 @@
 import datetime
+import webbrowser
 import yagmail
 
+
 class Course:
-    def __init__(self, course_info):
+    def __init__(self, course_info, course_name):
+        self.course_name = course_name
         self.day = course_info["day"]
         self.time_starts = course_info["time"]["time_starts"]
         self.time_ends = course_info["time"]["time_ends"]
@@ -28,23 +31,31 @@ class Course:
                 """
         with yagmail.SMTP(sender, password) as yag:
             yag.send(to=recipient, subject="schedule", contents=message)
-    #to be refactored
+
+    def open_zoom(self):
+        if self.zoom_link:
+            webbrowser.open(self.zoom_link)
+
+    # to be refactored
     def change_course(self, courses):
         add_or_change = input("add or change?: ").lower()
         if add_or_change == "c":
             old_course = input("Old course: ")
             courses.pop(old_course)
-        new_course = input("New Course: ")
-        new_day = input("Day: ")
-        new_time = {
-            "time starts": input("Time starts: "),
-            "time ends": input("Time ends: "),
-        }
-        new_type = input("Course type: ")
-        new_building = input("Building: ")
-        new_zoom_link = input("zoom link: ")
-        courses.update(
-            {new_course: [new_day, new_time, new_type, new_building, new_zoom_link]}
-        )
+        course_name = input("course name: ")
+        course_type = input("course type: ")
+        day = input("day: ")
+        building = input("building: ")
+        zoom_link = input("zoom link: ")
+        time_starts = input("time starts: ")
+        time_ends = input("time ends: ")
+        courses[course_name] = [
+            {
+                "day": day,
+                "time": {"time_starts": time_starts, "time_ends": time_ends},
+                "course_type": course_type,
+                "building": building,
+                "zoom_link": zoom_link,
+            }
+        ]
         return courses
-        
