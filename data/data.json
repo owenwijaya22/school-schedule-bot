@@ -2,14 +2,14 @@
     "CS1302": [
         {
             "day": "Monday",
-            "time": { "time_starts": "12", "time_ends": "14:50" },
+            "time": { "time_starts": "12.00", "time_ends": "14:50" },
             "course_type": "lecture",
             "building": "YEUNG LT-2",
             "zoom_link": "https://cityu.zoom.us/j/97540196724?pwd=d0E1eVpHOXZna3UyL2o1ZDhUNHVHZz09&uname=Owen+VALENTINUS"
         },
         {
             "day": "Monday",
-            "time": { "time_starts": "16:00", "time_ends": "16:50" },
+            "time": { "time_starts": "16.00", "time_ends": "16:50" },
             "course_type": "lab",
             "building": "LI 4400",
             "zoom_link": "https://cityu.zoom.us/j/99053961777?pwd=cWMvVVpxbzF4MXEwNytGLy9FMGRKdz09&uname=Owen+VALENTINUS"
@@ -18,21 +18,21 @@
     "MA1200": [
         {
             "day": "Tuesday",
-            "time": { "time_starts": "10:00", "time_ends": "11:50" },
+            "time": { "time_starts": "10.00", "time_ends": "11:50" },
             "course_type": "lecture",
             "building": "YEUNG LT-5",
             "zoom_link": "https://cityu.zoom.us/j/99899247499?pwd=TVByckx2U1U2S0YvV0xpbFVqYWJvZz09&uname=Owen+VALENTINUS#success"
         },
         {
             "day": "Wednesday",
-            "time": { "time_starts": "13:00", "time_ends": "13:50" },
+            "time": { "time_starts": "13.00", "time_ends": "13:50" },
             "course_type": "tutorial",
             "building": "YEUNG B5-210",
             "zoom_link": null
         },
         {
             "day": "Thursday",
-            "time": { "time_starts": "15:00", "time_ends": "1:.50" },
+            "time": { "time_starts": "15.00", "time_ends": "1:.50" },
             "course_type": "lecture",
             "building": "YEUNG LT-5",
             "zoom_link": "https://cityu.zoom.us/j/96115175728?pwd=VGR5ekRzMWRBdHFzaElpcUlzalZidz09&uname=Owen+VALENTINUS"
@@ -41,14 +41,14 @@
     "PHY1201": [
         {
             "day": "Tuesday",
-            "time": { "time_starts": "16:00", "time_ends": "18:50" },
+            "time": { "time_starts": "16.00", "time_ends": "18:50" },
             "course_type": "lab",
             "building": "YEUNG G5-317",
             "zoom_link": null
         },
         {
             "day": "Wednesday",
-            "time": { "time_starts": "16:00", "time_ends": "18:50" },
+            "time": { "time_starts": "16.00", "time_ends": "18:50" },
             "course_type": "lecture",
             "building": "YEUNG LT-1",
             "zoom_link": "https://cityu.zoom.us/j/93998400956?uname=Owen+VALENTINUS"
@@ -56,7 +56,7 @@
 
         {
             "day": "Thursday",
-            "time": { "time_starts": "11:00", "time_ends": "11:50" },
+            "time": { "time_starts": "11.00", "time_ends": "11:50" },
             "course_type": "tutorial",
             "building": "YEUNG LT-2",
             "zoom_link": "https://cityu.zoom.us/j/92199559650?uname=Owen+VALENTINUS"
@@ -65,14 +65,14 @@
     "JC2066": [
         {
             "day": "Wednesday",
-            "time": { "time_starts": "09:00", "time_ends": "09:50" },
+            "time": { "time_starts": "09.00", "time_ends": "09:50" },
             "course_type": "lecture",
             "building": "LI 1301",
             "zoom_link": "https://cityu.zoom.us/j/94173210865"
         },
         {
             "day": "Friday",
-            "time": { "time_starts": "09:00", "time_ends": "11:50" },
+            "time": { "time_starts": "09.00", "time_ends": "11:50" },
             "course_type": "tutorial",
             "building": "YEUNG LT-2",
             "zoom_link": "https://cityu.zoom.us/j/97748439786?uname=Owen+VALENTINUS"
@@ -81,7 +81,7 @@
     "GE1401": [
         {
             "day": "Friday",
-            "time": { "time_starts": "15:00", "time_ends": "17:50" },
+            "time": { "time_starts": "15.00", "time_ends": "17:50" },
             "course_type": "tutorial",
             "building": "YEUNG B5-209",
             "zoom_link": null
