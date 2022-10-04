@@ -36,10 +36,8 @@ class Course:
 
     def is_near(self):
         today_info = datetime.datetime.now()
-        # today = today_info.strftime("%A")
-        # today_hour_minute = float(today_info.strftime("%H.%M"))
-        today = 'Friday'
-        today_hour_minute = 14.55
+        today = today_info.strftime("%A")
+        today_hour_minute = float(today_info.strftime("%H.%M"))
         if today == self.day:
             if float(self.time_starts) - today_hour_minute <= 0.5:
                 self.send_email(self.sender, self.recipient, self.password)
