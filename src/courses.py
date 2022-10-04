@@ -43,26 +43,3 @@ class Course:
                 self.send_email(self.sender, self.recipient, self.password)
                 self.open_zoom()
 
-    # to be refactored
-    def change_course(self, courses):
-        add_or_change = input("add or change?: ").lower()
-        if add_or_change == "c":
-            old_course = input("Old course: ")
-            courses.pop(old_course)
-        course_name = input("course name: ")
-        course_type = input("course type: ")
-        day = input("day: ")
-        building = input("building: ")
-        zoom_link = input("zoom link: ")
-        time_starts = input("time starts: ")
-        time_ends = input("time ends: ")
-        courses[course_name] = [
-            {
-                "day": day,
-                "time": {"time_starts": time_starts, "time_ends": time_ends},
-                "course_type": course_type,
-                "building": building,
-                "zoom_link": zoom_link,
-            }
-        ]
-        return courses
