@@ -1,7 +1,7 @@
 import datetime
 import webbrowser
 import yagmail
-
+import json
 
 class Course:
     def __init__(self, course_info, course_name):
@@ -13,14 +13,12 @@ class Course:
         self.building = course_info["building"]
         self.zoom_link = course_info["zoom_link"]
 
-    def is_near(self):
-        today_info = datetime.datetime.now()
-        hour = float(today_info.time().hour)
-        today = today_info.strftime("%A")
-        if today == self.day:
-            # check one hour before class starts
-            if hour == float(self.time_starts[:2]) - 1:
-                return True
+    def get_config(self):
+        with open("./data/config.json", "r") as file:
+            configs = json.load(file)
+            self.sender = configs["sender"]
+            self.password = configs["password"]
+            self.recipient = configs["recipient"]
 
     def send_email(self, sender, recipient, password):
         message = f"""
@@ -35,6 +33,15 @@ class Course:
     def open_zoom(self):
         if self.zoom_link:
             webbrowser.open(self.zoom_link)
+
+    def is_near(self):
+        today_info = datetime.datetime.now()
+        today = today_info.strftime("%A")
+        today_hour_minute = float(today_info.strftime("%H.%M"))
+        if today == self.day:
+            if float(self.time_starts) - today_hour_minute <= 0.5:
+                self.send_email(self.sender, self.recipient, self.password)
+                self.open_zoom()
 
     # to be refactored
     def change_course(self, courses):
