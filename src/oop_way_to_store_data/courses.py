@@ -39,7 +39,6 @@ class Courses:
         if self.zoom_link:
             webbrowser.open(self.zoom_link)
     
-
 C01_C = Courses(
     "CS1302",
     "lecture"
