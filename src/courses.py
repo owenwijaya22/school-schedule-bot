@@ -13,13 +13,6 @@ class Course:
         self.building = course_info["building"]
         self.zoom_link = course_info["zoom_link"]
 
-    def get_config(self):
-        with open("./data/config.json", "r") as file:
-            configs = json.load(file)
-            self.sender = configs["sender"]
-            self.password = configs["password"]
-            self.recipient = configs["recipient"]
-
     def send_email(self, sender, recipient, password):
         message = f"""
                 <p>Course: {self.course_name} {self.course_type}</p>
@@ -34,12 +27,15 @@ class Course:
         if self.zoom_link:
             webbrowser.open(self.zoom_link)
 
-    def is_near(self):
+    def is_near(self, sender, recipient, password):
         today_info = datetime.datetime.now()
         today = today_info.strftime("%A")
         today_hour_minute = float(today_info.strftime("%H.%M"))
         if today == self.day:
-            if float(self.time_starts) - today_hour_minute <= 0.5:
-                self.send_email(self.sender, self.recipient, self.password)
+            # if less than 10 minutes before class, send email to notify
+            if float(self.time_starts) - today_hour_minute <= 0.90:
+                self.send_email(sender, recipient, password)
+            # if less than 5 minutes before class, open zoom class
+            if float(self.time_starts) - today_hour_minute <= 0.45:
                 self.open_zoom()
 
