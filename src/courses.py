@@ -3,6 +3,7 @@ import webbrowser
 import yagmail
 import json
 
+
 class Course:
     def __init__(self, course_info, course_name):
         self.course_name = course_name
@@ -32,10 +33,10 @@ class Course:
         today = today_info.strftime("%A")
         today_hour_minute = float(today_info.strftime("%H.%M"))
         if today == self.day:
-            # if less than 10 minutes before class, send email to notify
-            if float(self.time_starts) - today_hour_minute <= 0.90:
+            # assuming my laptop will never shutdown, fk i need to build my own raspeberry pi server asap, heroku is slow af
+            check = self.time_starts - float(self.time_starts)
+            # if less than 30 minutes before class, send email to notify
+            if check <= 0.7:
                 self.send_email(sender, recipient, password)
-            # if less than 5 minutes before class, open zoom class
-            if float(self.time_starts) - today_hour_minute <= 0.45 and float(self.time_starts) - today_hour_minute >= 0.00 and self.zoom_link:
-                self.open_zoom()
-
+                if self.zoom_link:
+                    self.open_zoom()
