@@ -31,11 +31,7 @@ class Course:
         today_info = datetime.datetime.now()
         today = today_info.strftime("%A")
         today_hour_minute = float(today_info.strftime("%H.%M"))
-        if today == self.day:
-            # if less than 10 minutes before class, send email to notify
-            if float(self.time_starts) - today_hour_minute <= 0.90:
+        if today == self.day and today_hour_minute <=  float(self.time_starts):
                 self.send_email(sender, recipient, password)
-            # if less than 5 minutes before class, open zoom class
-            if float(self.time_starts) - today_hour_minute <= 0.45 and float(self.time_starts) - today_hour_minute >= 0.00 and self.zoom_link:
-                self.open_zoom()
-
+                if self.zoom_link:
+                    self.open_zoom()
