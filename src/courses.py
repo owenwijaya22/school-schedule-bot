@@ -36,7 +36,7 @@ class Course:
             # assuming my laptop will never shutdown, fk i need to build my own raspeberry pi server asap, heroku is slow af
             check = self.time_starts - float(self.time_starts)
             # if less than 30 minutes before class, send email to notify
-            if check <= 0.7:
+            if check <= 0.7 and check >= 0:
                 self.send_email(sender, recipient, password)
                 if self.zoom_link:
                     self.open_zoom()
