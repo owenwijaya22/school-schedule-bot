@@ -36,6 +36,6 @@ class Course:
             if float(self.time_starts) - today_hour_minute <= 0.90:
                 self.send_email(sender, recipient, password)
             # if less than 5 minutes before class, open zoom class
-            if float(self.time_starts) - today_hour_minute <= 0.45:
+            if float(self.time_starts) - today_hour_minute <= 0.45 and float(self.time_starts) - today_hour_minute >= 0.00 and self.zoom_link:
                 self.open_zoom()
 
