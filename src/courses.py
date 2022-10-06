@@ -17,8 +17,9 @@ class Course:
     def send_email(self, sender, recipient, password):
         message = f"""
                 <p>Course: {self.course_name} {self.course_type}</p>
-                <p>Starts at: {self.time_starts}.00</p>
+                <p>Starts at: {self.time_starts}</p>
                 <p>Ends at: {self.time_ends}</p>
+                <p>Building: {self.building}</p>
                 <p><a href="{self.zoom_link}">zoom link</a></p>        
                 """
         with yagmail.SMTP(sender, password) as yag:
@@ -34,7 +35,7 @@ class Course:
         today_hour_minute = float(today_info.strftime("%H.%M"))
         if today == self.day:
             # assuming my laptop will never shutdown, fk i need to build my own raspeberry pi server asap, heroku is slow af
-            check = self.time_starts - float(self.time_starts)
+            check = float(self.time_starts) - today_hour_minute
             # if less than 30 minutes before class, send email to notify
             if check <= 0.7 and check >= 0:
                 self.send_email(sender, recipient, password)
