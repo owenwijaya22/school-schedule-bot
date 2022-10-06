@@ -32,7 +32,7 @@
         },
         {
             "day": "Thursday",
-            "time": { "time_starts": "15.00", "time_ends": "1:.50" },
+            "time": { "time_starts": "15.00", "time_ends": "1:50" },
             "course_type": "lecture",
             "building": "YEUNG LT-5",
             "zoom_link": "https://cityu.zoom.us/j/96115175728?pwd=VGR5ekRzMWRBdHFzaElpcUlzalZidz09&uname=Owen+VALENTINUS"
