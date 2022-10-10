@@ -33,11 +33,16 @@ class Course:
         today_info = datetime.datetime.now()
         today = today_info.strftime("%A")
         today_hour_minute = float(today_info.strftime("%H.%M"))
+        # assuming my laptop will never shutdown, fk i need to build my own raspeberry pi server asap, heroku is slow af
         if today == self.day:
-            # assuming my laptop will never shutdown, fk i need to build my own raspeberry pi server asap, heroku is slow af
-            check = float(self.time_starts) - today_hour_minute
             # if less than 30 minutes before class, send email to notify
-            if check <= 0.7 and check >= 0:
+            check = float(self.time_starts) - today_hour_minute
+            if check <= 0.7 and check >= 0.41:
                 self.send_email(sender, recipient, password)
                 if self.zoom_link:
                     self.open_zoom()
+            # i have to sort my datas if i use this method so meh
+            # if today_hour_minute < float(self.time_starts):
+            #         self.send_email(sender, recipient, password)
+            #         self.open_zoom()
+            #         return True
